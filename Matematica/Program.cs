@@ -11,7 +11,7 @@ namespace Matematica
             int n1 = int.Parse(Console.ReadLine());
             Console.WriteLine("inserisci il secondo numero");
             int n2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("che operazione vuoi fare? Somma / Sottrazione / Moltiplicazione / Divisione / Massimo / Minimo / Potenza");
+            Console.WriteLine("che operazione vuoi fare? Somma / Sottrazione / Moltiplicazione / Divisione / Massimo / Minimo / Potenza / Uguaglianza");
             string ris= Console.ReadLine();
             double risultato = 0;
             switch (ris)
@@ -36,6 +36,12 @@ namespace Matematica
                     break;
                 case "Potenza":
                     risultato = Operazioni.Potenza(n1, n2);
+                    break;
+                case "Uguaglianza":
+                    Console.WriteLine("inserisci il terzo numero");
+                    int n3 = int.Parse(Console.ReadLine());
+                    bool Uguaglianza = Operazioni.Uguaglianza(n1, n2, n3);
+                    Console.WriteLine($"l' uguaglianza è {Uguaglianza}");
                     break;
                 default:
                     throw new Exception(" scelta non valida");
